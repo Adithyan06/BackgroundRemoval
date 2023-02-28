@@ -15,7 +15,7 @@ def load_lottieurl(url):
 st.set_page_config(layout="wide", page_title="Image Background Remover")
 
 # ---- LOAD ASSETS ----
-lottie_coding = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
+lottie_coding = load_lottieurl("https://assets4.lottiefiles.com/packages/lf20_qSkIccSXCE.json")
 
 image_column, text_column = st.columns((1, 2))
 with image_column:
