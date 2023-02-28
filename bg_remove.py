@@ -1,10 +1,23 @@
 import streamlit as st
+from streamlit_lottie import st_lottie
+import requests
 from rembg import remove
 from PIL import Image
 from io import BytesIO
 import base64
 
+def load_lottieurl(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
 st.set_page_config(layout="wide", page_title="Image Background Remover")
+
+# ---- LOAD ASSETS ----
+lottie_coding = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
+img_contact_form = Image.open("images/yt_contact_form.png")
+img_lottie_animation = Image.open("images/yt_lottie_animation.png")
 
 st.write("## Remove background from your image 🥳")
 st.write(
@@ -40,3 +53,6 @@ if my_upload is not None:
     fix_image(upload=my_upload)
 else:
     fix_image("./zebra.jpg")
+
+with right_column:
+        st_lottie(lottie_coding, height=300, key="coding")
