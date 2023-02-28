@@ -17,11 +17,13 @@ st.set_page_config(layout="wide", page_title="Image Background Remover")
 # ---- LOAD ASSETS ----
 lottie_coding = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
 
-st.write("## Remove background from your image 🥳")
-st.write(
-    ":dog: Try uploading an image to watch the background removed. Full quality images can be downloaded from the sidebar. This code is open source and available [here](https://github.com/tyler-simons/BackgroundRemoval) on GitHub. Special thanks to the [rembg library](https://github.com/danielgatis/rembg) :grin:"
-)
-st.sidebar.write("## Upload and download :gear:")
+image_column, text_column = st.columns((1, 2))
+with image_column:
+        st.image(lottie_coding, height=300, key="coding")
+with text_column:
+        st.subheader("Remove background from your image 🥳")
+        st.write(":dog: Try uploading an image to watch the background removed. Full quality images can be downloaded from the sidebar. This code is open source and available [here](https://github.com/tyler-simons/BackgroundRemoval) on GitHub. Special thanks to the [rembg library](https://github.com/danielgatis/rembg) :grin:")
+        st.sidebar.write("## Upload and download :gear:")
 
 
 # Download the fixed image
@@ -51,6 +53,3 @@ if my_upload is not None:
     fix_image(upload=my_upload)
 else:
     fix_image("./zebra.jpg")
-
-with right_column:
-        st_lottie(lottie_coding, height=300, key="coding")
