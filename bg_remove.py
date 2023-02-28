@@ -16,8 +16,6 @@ st.set_page_config(layout="wide", page_title="Image Background Remover")
 
 # ---- LOAD ASSETS ----
 lottie_coding = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
-img_contact_form = Image.open("images/yt_contact_form.png")
-img_lottie_animation = Image.open("images/yt_lottie_animation.png")
 
 st.write("## Remove background from your image 🥳")
 st.write(
